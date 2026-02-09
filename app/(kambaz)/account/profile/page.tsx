@@ -1,51 +1,57 @@
-import Link from "next/link";
+import { Button, FormControl, FormSelect } from "react-bootstrap";
 export default function Profile() {
     return (
-        <div id="wd-profile-screen">
-            <h3>Profile</h3>
-            <div>
-                <label htmlFor="wd-username">Username</label>
-                <br />
-                <input id="wd-username" className="wd-username" defaultValue="alice" title="Please enter your username" placeholder="username" /> <br />
-            </div>
-            <div>
-                <label htmlFor="wd-password">Password</label>
-                <br />
-                <input id="wd-password" className="wd-password" defaultValue="123" title="Please enter your password" placeholder="password" type="password" /> <br />
-            </div>
-            <div>
-                <label htmlFor="wd-firstname">First Name</label>
-                <br />
-                <input id="wd-firstname" defaultValue="Alice" title="Please enter your first name" placeholder="First Name" /> <br />
-            </div>
-            <div>
-                <label htmlFor="wd-lastname">Last Name</label>
-                <br />
-                <input id="wd-lastname" defaultValue="Wonderland" title="Please enter your last name" placeholder="Last Name" /> <br />
-            </div>
-            <div>
-                <label htmlFor="wd-dob">Date of Birth</label>
-                <br />
-                <input id="wd-dob" defaultValue="2000-01-01" title="Please enter your date of birth" placeholder="Date of Birth" type="date" /> <br />
-            </div>
-            <div>
-                <label htmlFor="wd-email">Email</label>
-                <br />
-                <input id="wd-email" defaultValue="alice@wonderland" title="Please enter your email address" placeholder="Email Address" type="email" /> <br />
-            </div>
-            <div>
-                <label htmlFor="wd-role">Role</label>
-                <br />
-                <select id="wd-role" defaultValue="FACULTY" title="Please select your role">
-                    <option value="USER">User</option>          <option value="ADMIN">Admin</option>
-                    <option value="FACULTY">Faculty</option>    <option value="STUDENT">Student</option>
-                </select>
-            </div>
-            <div>
-                <button>Save</button>
-                <br />
-            </div>
-            <Link href="signin"> Sign out </Link>
+        <div id="wd-profile-screen" className="d-flex flex-column gap-2">
+            <h1>Profile</h1>
+
+            <FormControl id="wd-username"
+                placeholder="username"
+                defaultValue="alice"
+                title="Please enter your username">
+            </FormControl>
+
+            <FormControl id="wd-password"
+                placeholder="password"
+                defaultValue="123"
+                title="Please enter your password">
+            </FormControl>
+
+            <FormControl id="wd-firstname"
+                placeholder="First Name"
+                defaultValue="Alice"
+                title="Please enter your first name">
+            </FormControl>
+
+            <FormControl id="wd-lastname"
+                placeholder="Last Name"
+                defaultValue="Wonderland"
+                title="Please enter your last name">
+            </FormControl>
+
+            <FormControl id="wd-dob"
+                placeholder="Date of Birth"
+                type="date"
+                defaultValue="2000-01-01"
+                title="Please enter your date of birth">
+            </FormControl>
+
+            <FormControl id="wd-email"
+                placeholder="Email Address"
+                type="email"
+                defaultValue="alice@wonderland"
+                title="Please enter your email address">
+            </FormControl>
+
+            <FormSelect>
+                <option value="USER" defaultChecked>User</option>
+                <option value="FACULTY">Faculty</option>
+            </FormSelect>
+
+            <Button id="wd-signout-btn"
+                href="/account/signin"
+                className="btn btn-danger w-100 mt-1">
+                 Signout
+            </Button>
         </div>
     );
 }
