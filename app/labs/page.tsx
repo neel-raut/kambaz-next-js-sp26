@@ -4,6 +4,7 @@ export default function labs() {
    <div id="wd-labs">
      <h1>Labs</h1>
      <table>
+      <tbody>
         <tr>
           <td>
             Neel Raut
@@ -14,6 +15,7 @@ export default function labs() {
             CS4550 Section 2
           </td>
         </tr>
+      </tbody>
      </table>
      <ul>
        <li>

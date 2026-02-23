@@ -1,0 +1,92 @@
+[
+  {
+    "_id": "RS101",
+    "name": "React JS",
+    "number": "CS1234",
+    "startDate": "2023-01-10",
+    "endDate": "2023-05-15",
+    "department": "Khoury College of Computer Sciences",
+    "credits": 4,
+    "description": "This course provides an in-depth introduction to React JS, a popular JavaScript library for building user interfaces. Students will learn the fundamentals of React, including components, state management, and lifecycle methods. The course covers advanced topics such as hooks, context API, and performance optimization. Through hands-on projects and assignments, students will gain practical experience in developing responsive and dynamic web applications using React JS.",
+    "image": "ReactJS.jpg"
+  },
+  {
+    "_id": "RS102",
+    "name": "Algorithms",
+    "number": "CS3000",
+    "startDate": "2023-01-10",
+    "endDate": "2023-05-15",
+    "department": "Khoury College of Computer Sciences",
+    "credits": 3,
+    "description": "This course offers a comprehensive study of algorithms, focusing on their design, analysis, and implementation. Students will explore various algorithmic techniques such as divide-and-conquer, dynamic programming, greedy algorithms, and graph algorithms. The course emphasizes the importance of algorithm efficiency and complexity analysis, providing students with the tools to evaluate and optimize algorithms for real-world applications.",
+    "image": "cs3000pic.jpg"
+  },
+  {
+    "_id": "RS103",
+    "name": "Computer Systems",
+    "number": "CS3650",
+    "startDate": "2023-01-10",
+    "endDate": "2023-05-15",
+    "department": "Khoury College of Computer Sciences",
+    "credits": 4,
+    "description": "This course delves into the architecture and organization of computer systems. Topics include processor design, memory hierarchy, input/output systems, and operating system concepts. Students will gain an understanding of how hardware and software interact to execute programs efficiently. The course also covers assembly language programming and system-level debugging techniques, preparing students for careers in systems programming and computer architecture.",
+    "image": "cs3650pic.jpg"
+  },
+  {
+    "_id": "RS104",
+    "name": "Theory of Computation",
+    "number": "CS3800",
+    "startDate": "2023-01-10",
+    "endDate": "2023-05-15",
+    "department": "Khoury College of Computer Sciences",
+    "credits": 3,
+    "description": "Theory of Computation is an in-depth course that explores the fundamental principles of computer science. Students will study formal languages, automata theory, computability, and complexity theory. The course covers topics such as Turing machines, context-free grammars, and the P vs NP problem. Through rigorous mathematical analysis and problem-solving exercises, students will develop a deep understanding of the theoretical limits of computation and the classification of computational problems.",
+    "image": "cs3800pic.jpg"
+  },
+  {
+    "_id": "RS105",
+    "name": "Cybersecurity",
+    "number": "CY2550",
+    "startDate": "2023-01-10",
+    "endDate": "2023-05-15",
+    "department": "Khoury College of Computer Sciences",
+    "credits": 3,
+    "description": "Cybersecurity focuses on the principles and practices of protecting computer systems and networks from cyber threats. Students will learn about various types of cyber attacks, including malware, phishing, and denial-of-service attacks, as well as strategies for defense and mitigation. The course covers topics such as cryptography, network security, ethical hacking, and incident response. Through case studies and hands-on exercises, students will gain practical skills in securing digital assets and understanding the evolving landscape of cybersecurity threats.",
+    "image": "cy2550pic.jpg"
+  },
+  {
+    "_id": "RS106",
+    "name": "Public Speaking",
+    "number": "COM1112",
+    "startDate": "2023-01-10",
+    "endDate": "2023-05-15",
+    "department": "College of Social Sciences and Humanities",
+    "credits": 3,
+    "description": "Public Speaking merges the art of effective communication with the science of persuasion. This course equips students with the skills to craft compelling speeches, engage diverse audiences, and deliver messages with confidence. Through a combination of theoretical frameworks and practical exercises, students will explore techniques for overcoming stage fright, utilizing body language, and structuring speeches for maximum impact. The course also emphasizes the importance of ethical communication and the role of public speaking in various professional and social contexts.",
+    "image": "comm1112pic.jpg"
+  },
+  {
+    "_id": "RS107",
+    "name": "Acting for the Camera",
+    "number": "THTR2345",
+    "startDate": "2023-01-10",
+    "endDate": "2023-05-15",
+    "department": "College of Arts, Media and Design",
+    "credits": 3,
+    "description": "This course offers an exploration of acting techniques specifically tailored for film and television. Students will learn how to adapt their performances for the camera, focusing on subtlety, emotional authenticity, and the technical aspects of on-screen acting. The course covers topics such as scene study, character development, and the use of space and movement in front of the camera. Through practical exercises and scene work, students will gain experience in auditioning, working with directors, and understanding the collaborative nature of film production.",
+    "image": "thtr2345pic.jpg",
+    "author": "654f9ec2ea7ead465908d1e3"
+  },
+  {
+    "_id": "RS108",
+    "name": "Bostonography",
+    "number": "INSH2102",
+    "startDate": "2023-01-10",
+    "endDate": "2023-05-15",
+    "department": "College of Social Sciences and Humanities",
+    "credits": 4,
+    "description": "This course explores the rich history, culture, and social dynamics of Boston. Students will examine the city's role in American history, its diverse neighborhoods, and its contributions to arts, education, and innovation. The course includes field trips to historical sites, museums, and cultural landmarks, providing students with a hands-on learning experience. Through lectures, discussions, and projects, students will gain a deeper understanding of Boston's unique identity and its impact on the broader American landscape.",
+    "image": "insh2102pic.jpg",
+    "author": "654f9ec2ea7ead465908d1e3"
+  }
+]

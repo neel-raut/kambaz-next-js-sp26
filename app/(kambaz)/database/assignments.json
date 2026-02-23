@@ -1,0 +1,217 @@
+[
+  { 
+    "_id": "A101", 
+    "title": "ReactJS Components and State Management Exam",
+    "course": "RS101",
+    "description": "This assignment tests students' understanding of ReactJS components and state management. It includes questions on component lifecycle, props, and state handling, as well as practical coding exercises to assess their ability to create dynamic user interfaces using ReactJS.",
+    "available": "2023-02-15",
+    "due": "2023-02-22",
+    "points": 100
+  },
+  { 
+    "_id": "A102",
+    "title": "ReactJS Resource Access Exam",
+    "course": "RS101",
+    "description": "This assignment evaluates students' knowledge of resource access in ReactJS applications. It covers topics such as fetching data from APIs, handling asynchronous operations, and managing side effects using hooks. Students will be required to implement a small project that demonstrates their ability to access and display data from external sources within a ReactJS application.",
+    "available": "2023-03-01",
+    "due": "2023-03-08",
+    "points": 100
+  },
+  { 
+    "_id": "A103",
+    "title": "ReactJS Website Project",
+    "course": "RS101",
+    "description": "This assignment is a comprehensive project that requires students to build a fully functional website using ReactJS. The project will involve creating multiple components, implementing state management, and integrating external APIs for data fetching. Students will be assessed on their ability to design a user-friendly interface, write clean and efficient code, and demonstrate a solid understanding of ReactJS concepts throughout the development process.",
+    "available": "2023-03-15",
+    "due": "2023-04-15",
+    "points": 200
+  },
+  { 
+    "_id": "A201",
+    "title": "Searching Algorithms Quiz",
+    "course": "RS102",
+    "description": "This quiz assesses students' understanding of various searching algorithms, including linear search, binary search, and hash-based search techniques. It includes multiple-choice questions, coding exercises, and problem-solving scenarios to evaluate their ability to analyze the efficiency and applicability of different searching algorithms in various contexts.",
+    "available": "2023-02-20",
+    "due": "2023-02-27",
+    "points": 100
+  },
+  { 
+    "_id": "A202",
+    "title": "Greedy Algorithms Quiz",
+    "course": "RS102",
+    "description": "This quiz tests students' knowledge of greedy algorithms and their applications. It covers topics such as the greedy choice property, optimal substructure, and common greedy algorithms like Prim's and Kruskal's for graph problems. Students will be required to analyze algorithmic problems and determine whether a greedy approach is suitable, as well as implement greedy algorithms to solve specific problems.",
+    "available": "2023-03-05",
+    "due": "2023-03-12",
+    "points": 100
+  },
+  { 
+    "_id": "A203",
+    "title": "Dynamic Programming Quiz",
+    "course": "RS102",
+    "description": "This quiz evaluates students' understanding of dynamic programming concepts and techniques. It includes questions on the principles of dynamic programming, such as overlapping subproblems and optimal substructure, as well as coding exercises that require students to implement dynamic programming solutions for classic problems like the knapsack problem, longest common subsequence, and Fibonacci sequence.",
+    "available": "2023-03-20",
+    "due": "2023-03-27",
+    "points": 100
+  },
+  { 
+    "_id": "A301",
+    "title": "Shell Tokenizer Task",
+    "course": "RS103",
+    "description": "This assignment requires students to implement a shell tokenizer that can parse command-line input into tokens. The task involves handling various edge cases, such as quoted strings, escaped characters, and different types of whitespace. Students will be assessed on their ability to write efficient and robust code that accurately tokenizes input for use in a shell environment.",
+    "available": "2023-02-25",
+    "due": "2023-03-04",
+    "points": 100
+  },
+  { 
+    "_id": "A302",
+    "title": "Assembly Calculations",
+    "course": "RS103",
+    "description": "This assignment focuses on assembly language programming and requires students to perform various calculations using assembly code. Students will be tasked with writing assembly programs that demonstrate their understanding of basic arithmetic operations, memory management, and register usage. The assignment will assess their ability to write efficient assembly code and debug any issues that arise during the development process.",
+    "available": "2023-03-10",
+    "due": "2023-03-17",
+    "points": 100
+  },
+  { 
+    "_id": "A303",
+    "title": "OS Final Project",
+    "course": "RS103",
+    "description": "This final project requires students to design and implement a simple operating system kernel. The project will involve creating basic functionalities such as process management, memory management, and file system operations. Students will be assessed on their ability to write clean and efficient code, as well as their understanding of operating system concepts and principles throughout the development process.",
+    "available": "2023-03-25",
+    "due": "2023-04-25",
+    "points": 200},
+  { 
+    "_id": "A401",
+    "title": "Finite Automata Quiz",
+    "course": "RS104",
+    "description": "This quiz tests students' understanding of finite automata, including deterministic finite automata (DFA) and nondeterministic finite automata (NFA). It includes questions on the construction and analysis of finite automata, as well as coding exercises that require students to implement algorithms for converting between DFAs and NFAs, minimizing DFAs, and determining language acceptance.",
+    "available": "2023-02-28",
+    "due": "2023-03-07",
+    "points": 100
+  },
+  { 
+    "_id": "A402",
+    "title": "Pushdown Automaton Task",
+    "course": "RS104",
+    "description": "This assignment requires students to design and implement a pushdown automaton (PDA) for a given context-free language. Students will be tasked with creating a PDA that can recognize the language, as well as writing code to simulate the PDA's behavior. The assignment will assess their understanding of context-free languages, stack-based computation, and their ability to implement a PDA effectively.",
+    "available": "2023-03-15",
+    "due": "2023-03-22",
+    "points": 100
+  },
+  { 
+    "_id": "A403",
+    "title": "Turing Machines Exam",
+    "course": "RS104",
+    "description": "This exam evaluates students' knowledge of Turing machines and their role in the theory of computation. It includes questions on the definition and properties of Turing machines, as well as coding exercises that require students to design Turing machines for specific languages and problems. The exam will assess their understanding of computability, decidability, and the limits of computation.",
+    "available": "2023-03-30",
+    "due": "2023-04-06",
+    "points": 100
+  },
+  { 
+    "_id": "A501",
+    "title": "Cyberattack Quiz",
+    "course": "RS105",
+    "description": "This quiz tests students' knowledge of various types of cyberattacks, including malware, phishing, and denial-of-service attacks. It includes multiple-choice questions, case studies, and scenario-based questions to evaluate their understanding of the methods and motivations behind different cyber threats, as well as strategies for defense and mitigation.",
+    "available": "2023-02-22",
+    "due": "2023-03-01",
+    "points": 100
+  },
+  { 
+    "_id": "A502",
+    "title": "Cryptography Project",
+    "course": "RS105",
+    "description": "This project requires students to implement a simple cryptographic algorithm, such as the Caesar cipher or the Vigenère cipher. Students will be tasked with writing code to encrypt and decrypt messages using their chosen algorithm, as well as analyzing the security and weaknesses of the algorithm. The project will assess their understanding of basic cryptographic principles and their ability to implement a functional encryption scheme.",
+    "available": "2023-03-10",
+    "due": "2023-03-17",
+    "points": 100
+  },
+  { 
+    "_id": "A503",
+    "title": "Ethical Hacking Paper",
+    "course": "RS105",
+    "description": "This assignment requires students to research and write a paper on ethical hacking. Students will be tasked with exploring the ethical considerations, legal implications, and practical techniques involved in ethical hacking. The paper will assess their ability to critically analyze the role of ethical hackers in cybersecurity, as well as their understanding of the tools and methods used in ethical hacking practices.",
+    "available": "2023-03-25",
+    "due": "2023-04-01",
+    "points": 100
+  },
+  { 
+    "_id": "A601",
+    "title": "Introductory Speech Task",
+    "course": "RS106",
+    "description": "This assignment requires students to prepare and deliver an introductory speech on a topic of their choice. The task involves researching the topic, organizing the content, and practicing effective delivery techniques. Students will be assessed on their ability to engage the audience, communicate their ideas clearly, and demonstrate confidence in their presentation skills.",
+    "available": "2023-02-28",
+    "due": "2023-03-07",
+    "points": 100
+  },
+  { 
+    "_id": "A602",
+    "title": "Presidential Speech Analysis",
+    "course": "RS106",
+    "description": "This assignment requires students to analyze a presidential speech of their choice. Students will be tasked with examining the rhetorical strategies, persuasive techniques, and overall effectiveness of the speech. The analysis will assess their ability to critically evaluate the content and delivery of the speech, as well as their understanding of the historical and political context in which it was delivered.",
+    "available": "2023-03-15",
+    "due": "2023-03-22",
+    "points": 100
+  },
+  { 
+    "_id": "A603",
+    "title": "Formal Final Presentation",
+    "course": "RS106",
+    "description": "This final presentation requires students to prepare and deliver a formal presentation on a topic related to their field of study. The task involves conducting research, organizing the content, and utilizing visual aids effectively. Students will be assessed on their ability to communicate their ideas clearly, engage the audience, and demonstrate professionalism in their presentation style.",
+    "available": "2023-03-30",
+    "due": "2023-04-06",
+    "points": 200
+  },
+  { 
+    "_id": "A701",
+    "title": "Fun Facts Poll",
+    "course": "RS107",
+    "description": "This assignment requires students to create and conduct a fun facts poll among their peers. Students will be tasked with designing a survey, collecting responses, and analyzing the results. The assignment will assess their ability to create engaging questions, effectively gather data, and present their findings in a clear and concise manner.",
+    "available": "2023-02-20",
+    "due": "2023-02-27",
+    "points": 100
+  },
+  { 
+    "_id": "A702",
+    "title": "Mini-Movie Project",
+    "course": "RS107",
+    "description": "This project requires students to create a mini-movie on a topic of their choice. Students will be tasked with writing a script, filming and editing the footage, and presenting the final product. The project will assess their creativity, storytelling abilities, and technical skills in video production.",
+    "available": "2023-03-10",
+    "due": "2023-03-17",
+    "points": 100
+  },
+  { 
+    "_id": "A703",
+    "title": "Final Movie Project",
+    "course": "RS107",
+    "description": "This final project requires students to create a full-length movie on a topic of their choice. Students will be tasked with writing a detailed script, filming and editing the footage, and presenting the final product. The project will assess their creativity, storytelling abilities, and technical skills in video production, as well as their ability to manage a larger-scale project from start to finish.",
+    "available": "2023-03-25",
+    "due": "2023-04-25",
+    "points": 200
+  },
+  { 
+    "_id": "A801",
+    "title": "History of Boston Paper",
+    "course": "RS108",
+    "description": "This assignment requires students to research and write a paper on the history of Boston. Students will be tasked with exploring significant events, cultural developments, and influential figures that have shaped the city's history. The paper will assess their ability to conduct thorough research, analyze historical information, and present their findings in a well-organized and coherent manner.",
+    "available": "2023-02-28",
+    "due": "2023-03-07",
+    "points": 100
+  },
+  { 
+    "_id": "A802",
+    "title": "Culture of Boston Dissertation",
+    "course": "RS108",
+    "description": "This assignment requires students to write a dissertation on the culture of Boston. Students will be tasked with exploring various aspects of Boston's culture, including its arts scene, culinary traditions, and social dynamics. The dissertation will assess their ability to conduct in-depth research, critically analyze cultural phenomena, and present their findings in a comprehensive and well-structured format.",
+    "available": "2023-03-15",
+    "due": "2023-04-15",
+    "points": 200
+  },
+  { 
+    "_id": "A803", 
+    "title": "Recorded Final Presentations",
+    "course": "RS108",
+    "description": "This final assignment requires students to prepare and record a presentation on a topic related to Boston's history or culture. Students will be tasked with researching their chosen topic, organizing their content, and delivering a clear and engaging presentation. The recorded presentation will assess their ability to communicate their ideas effectively, engage the audience, and demonstrate professionalism in their presentation style.",
+    "available": "2023-03-30",
+    "due": "2023-04-06",
+    "points": 100
+  }
+]

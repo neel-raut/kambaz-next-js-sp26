@@ -7,7 +7,7 @@ export default function KambazLayout(
     return (
         <div id="wd-kambaz">
             <div className="d-flex">
-                <div>
+                <div className="d-none d-md-block">
                     <KambazNavigation />
                 </div>
 

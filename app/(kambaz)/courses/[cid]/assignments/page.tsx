@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import AssignmentsControls from "./assignmentsControls";
 import { ListGroup, ListGroupItem } from "react-bootstrap";
@@ -5,8 +6,28 @@ import { BsGripVertical } from "react-icons/bs";
 import { BsFileEarmarkText } from "react-icons/bs";
 import AssignmentListControlButtons from "./AssignmentListControlButtons";
 import AssignmentControlButtons from "./AssignmentControlButtons";
+import { useParams } from "next/navigation";
+import * as db from "../../../database";
+
+function formatDate(dateString: string, time: string) {
+  // Take in date as "YYYY-MM-DD" format, time as "HH:MM" format
+  // Then conver to "Month Day at HH:MM am/pm" format
+  const date = new Date(`${dateString}T${time}`);
+  const formattedDate = date.toLocaleString("en-US", {
+    month: "long",
+    day: "numeric",
+  });
+  const formattedTime = date.toLocaleString("en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  });
+  return `${formattedDate} at ${formattedTime.toLowerCase()}`;
+}
 
 export default function Assignments() {
+    const { cid } = useParams();
+    const assignments = db.assignments;
     return (
       <div id="wd-assignments">
         <AssignmentsControls /><br />
@@ -17,56 +38,26 @@ export default function Assignments() {
               <BsGripVertical className="me-2 fs-3" /> ASSIGNMENTS <AssignmentListControlButtons />
             </div>
             <ListGroup className="wd-assignments rounded-0">
-              <ListGroupItem className="wd-assignment d-flex align-items-center">
-                <BsGripVertical className="me-2 fs-3 flex-shrink-0 me-1" />
-                <BsFileEarmarkText className="me-4 fs-3 text-success flex-shrink-0" />
-                <div className="d-flex flex-column flex-grow-1">
-                  <Link className="text-dark fw-bold text-decoration-none" href="/courses/1234/assignments/1">
-                    A1
-                  </Link>
-                  <div className="text-muted small d-flex flex-wrap gap-1 fs-6">
-                    <span className="text-danger">Multiple Modules</span> |
-                    <span><strong>Not available until</strong> May 6 at 12:00 am |</span>
-                    <span><strong>Due</strong> May 13 at 11:59 pm |</span>
-                    <span>100 pts</span>
-                  </div>
-                </div>
-                <AssignmentControlButtons />
-              </ListGroupItem>
-              
-              <ListGroupItem className="wd-assignment d-flex align-items-center">
-                <BsGripVertical className="me-2 fs-3 flex-shrink-0" />
-                <BsFileEarmarkText className="me-4 fs-3 text-success flex-shrink-0" />
-                <div className="d-flex flex-column flex-grow-1">
-                  <Link className="text-dark fw-bold text-decoration-none" href="/courses/1234/assignments/2">
-                    A2
-                  </Link>
-                  <div className="text-muted small d-flex flex-wrap gap-1 fs-6">
-                    <span className="text-danger">Multiple Modules</span> |
-                    <span><strong>Not available until</strong> May 13 at 12:00 am |</span>
-                    <span><strong>Due</strong> May 20 at 11:59 pm |</span>
-                    <span>100 pts</span>
-                  </div>
-                </div>
-                <AssignmentControlButtons />
-              </ListGroupItem>
-
-              <ListGroupItem className="wd-assignment d-flex align-items-center">
-                <BsGripVertical className="me-2 fs-3 flex-shrink-0" />
-                <BsFileEarmarkText className="me-4 fs-3 text-success flex-shrink-0" />
-                <div className="d-flex flex-column flex-grow-1">
-                  <Link className="text-dark fw-bold text-decoration-none" href="/courses/1234/assignments/3">
-                    A3
-                  </Link>
-                  <div className="text-muted small d-flex flex-wrap gap-1 fs-6">
-                    <span className="text-danger">Multiple Modules</span> |
-                    <span><strong>Not available until</strong> May 13 at 12:00 am |</span>
-                    <span><strong>Due</strong> May 20 at 11:59 pm |</span>
-                    <span>100 pts</span>
-                  </div>
-                </div>
-                <AssignmentControlButtons />
-              </ListGroupItem>
+              {assignments
+                .filter((assignment) => assignment.course === cid)
+                .map((assignment) => (
+                  <ListGroupItem className="wd-assignment d-flex align-items-center" key={assignment._id}>
+                    <BsGripVertical className="me-2 fs-3 flex-shrink-0 me-1" />
+                    <BsFileEarmarkText className="me-4 fs-3 text-success flex-shrink-0" />
+                    <div className="d-flex flex-column flex-grow-1">
+                      <Link className="text-dark fw-bold text-decoration-none" href={`/courses/${cid}/assignments/${assignment._id}`}>
+                        {assignment.title}
+                      </Link>
+                      <div className="text-muted small d-flex flex-wrap gap-1 fs-6">
+                        <span className="text-danger">Multiple Modules</span> |
+                        <span><strong>Not available until</strong> {formatDate(assignment.available, "00:00")} |</span>
+                        <span><strong>Due</strong> {formatDate(assignment.due, "23:59")} |</span>
+                        <span>{assignment.points} pts</span>
+                      </div>
+                    </div>
+                    <AssignmentControlButtons />
+                  </ListGroupItem>
+                  ))}
             </ListGroup>
           </ListGroupItem>
         </ListGroup>
