@@ -1,8 +1,25 @@
 import { IoEllipsisVertical } from "react-icons/io5";
 import GreenCheckmark from "../modules/GreenCheckmark";
-export default function AssignmentControlButtons() {
+import { FaTrash } from "react-icons/fa";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../store";
+export default function AssignmentControlButtons(
+  { assignmentId, deleteAssignment }:
+  { assignmentId: string; deleteAssignment: (assignmentId: string) => void; }
+) {
+  const currentUser = useSelector((state: RootState) => state.accountReducer.currentUser);
   return (
     <div className="d-flex align-items-center">
       <GreenCheckmark />
       <IoEllipsisVertical className="fs-4" />
+      {currentUser?.role === "FACULTY" && (
+        <>
+          <FaTrash className="text-danger mb-1" onClick={() => {
+            const confirmDelete = window.confirm("Are you sure you want to delete this assignment?");
+            if (confirmDelete) {
+              deleteAssignment(assignmentId);
+            }
+          }} />
+        </>
+      )}
     </div> );}

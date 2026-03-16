@@ -7,12 +7,14 @@ import { BsFileEarmarkText } from "react-icons/bs";
 import AssignmentListControlButtons from "./AssignmentListControlButtons";
 import AssignmentControlButtons from "./AssignmentControlButtons";
 import { useParams } from "next/navigation";
-import * as db from "../../../database";
+import {deleteAssignment} from "./reducer";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../../store";
 
 function formatDate(dateString: string, time: string) {
   // Take in date as "YYYY-MM-DD" format, time as "HH:MM" format
   // Then conver to "Month Day at HH:MM am/pm" format
-  const date = new Date(`${dateString}T${time}`);
+  const date = dateString.includes("T") ? new Date(dateString) : new Date(`${dateString}T${time}`);
   const formattedDate = date.toLocaleString("en-US", {
     month: "long",
     day: "numeric",
@@ -27,7 +29,8 @@ function formatDate(dateString: string, time: string) {
 
 export default function Assignments() {
     const { cid } = useParams();
-    const assignments = db.assignments;
+    const { assignments } = useSelector((state: RootState) => state.assignmentsReducer);
+    const dispatch = useDispatch();
     return (
       <div id="wd-assignments">
         <AssignmentsControls /><br />
@@ -55,7 +58,11 @@ export default function Assignments() {
                         <span>{assignment.points} pts</span>
                       </div>
                     </div>
-                    <AssignmentControlButtons />
+                    <AssignmentControlButtons
+                      assignmentId={assignment._id}
+                      deleteAssignment={(assignmentId) => {
+                        dispatch(deleteAssignment(assignmentId));
+                      }} />
                   </ListGroupItem>
                   ))}
             </ListGroup>
