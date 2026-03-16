@@ -14,7 +14,7 @@ export default function QueryCalculator() {
 
  return (
    <div style={{ padding: 40 }}>
-     <h1>Calculator – Query Parameters</h1>
+     <h1>Calculator - Query Parameters</h1>
 
      Raw query values (already decoded by Next.js):
      <p>
