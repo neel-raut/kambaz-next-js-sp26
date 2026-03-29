@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import Link from "next/link";
 import AssignmentsControls from "./assignmentsControls";
@@ -7,9 +8,11 @@ import { BsFileEarmarkText } from "react-icons/bs";
 import AssignmentListControlButtons from "./AssignmentListControlButtons";
 import AssignmentControlButtons from "./AssignmentControlButtons";
 import { useParams } from "next/navigation";
-import {deleteAssignment} from "./reducer";
+import { setAssignments} from "./reducer";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../../store";
+import * as client from "./client";
+import { useEffect } from "react";
 
 function formatDate(dateString: string, time: string) {
   // Take in date as "YYYY-MM-DD" format, time as "HH:MM" format
@@ -31,6 +34,22 @@ export default function Assignments() {
     const { cid } = useParams();
     const { assignments } = useSelector((state: RootState) => state.assignmentsReducer);
     const dispatch = useDispatch();
+
+    const fetchAssignments = async () => {
+      const assignments = await client.findAssignmentsForCourse(cid as string);
+      dispatch(setAssignments(assignments));
+    };
+
+    const onRemoveAssignment = async (assignmentId: string) => {
+      await client.deleteAssignment(assignmentId);
+      dispatch(setAssignments(assignments.filter((a: any) => a._id !== assignmentId)));
+    };
+
+    useEffect(() => {
+      fetchAssignments();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
     return (
       <div id="wd-assignments">
         <AssignmentsControls /><br />
@@ -42,8 +61,7 @@ export default function Assignments() {
             </div>
             <ListGroup className="wd-assignments rounded-0">
               {assignments
-                .filter((assignment) => assignment.course === cid)
-                .map((assignment) => (
+                .map((assignment: any) => (
                   <ListGroupItem className="wd-assignment d-flex align-items-center" key={assignment._id}>
                     <BsGripVertical className="me-2 fs-3 flex-shrink-0 me-1" />
                     <BsFileEarmarkText className="me-4 fs-3 text-success flex-shrink-0" />
@@ -61,7 +79,7 @@ export default function Assignments() {
                     <AssignmentControlButtons
                       assignmentId={assignment._id}
                       deleteAssignment={(assignmentId) => {
-                        dispatch(deleteAssignment(assignmentId));
+                        onRemoveAssignment(assignmentId);
                       }} />
                   </ListGroupItem>
                   ))}
@@ -69,43 +87,4 @@ export default function Assignments() {
           </ListGroupItem>
         </ListGroup>
       </div>
-  );}  
-
-/*
-<h3 id="wd-assignments-title">
-          ASSIGNMENTS 40% of Total <button>+</button> </h3>
-        <ul id="wd-assignment-list">
-          <li className="wd-assignment-list-item">
-            <Link href="/courses/1234/assignments/1"
-               className="wd-assignment-link" >
-              A1 - ENV + HTML
-            </Link>
-            <div>
-                <text>Multiple Modules | <strong>Not available until</strong> May 6 at 12:00 am |</text>
-                <br/>
-                <text> <strong>Due</strong> May 13 at 11:59 pm | 100 pts </text>
-            </div>
-          </li>
-          <li className="wd-assignment-list-item">
-            <Link href="/courses/1234/assignments/2"
-               className="wd-assignment-link" >
-              A2 - CSS + BOOTSTRAP
-            </Link>
-            <div>
-                <text>Multiple Modules | <strong>Not available until</strong> May 13 at 12:00 am |</text>
-                <br/>
-                <text> <strong>Due</strong> May 20 at 11:59 pm | 100 pts </text>
-            </div>
-          </li>
-          <li className="wd-assignment-list-item">
-            <Link href="/courses/1234/assignments/3"
-               className="wd-assignment-link" >
-              A3 - JAVASCRIPT + REACT
-            </Link>
-            <div>
-                <text>Multiple Modules | <strong>Not available until</strong> May 20 at 12:00 am |</text>
-                <br/>
-                <text> <strong>Due</strong> May 27 at 11:59 pm | 100 pts </text>
-            </div>
-          </li>
-        </ul>*/
+  );}

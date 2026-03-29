@@ -35,6 +35,10 @@ export default function labs() {
             Lab 4: URL Encoding and Query Parameters </Link>
        </li>
        <li>
+          <Link href="/labs/lab5" id="wd-lab5-link">
+            Lab 5: Interfacing with Node HTTP Server </Link>
+       </li>
+       <li>
           <Link href="/" id="wd-kambaz-link">
             Kambaz</Link>
        </li>

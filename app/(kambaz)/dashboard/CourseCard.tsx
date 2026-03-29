@@ -56,7 +56,6 @@ export default function CourseCard({
                                 {!isFaculty && enrollmentViewToggled && (
                                     <EnrollmentButton
                                         isEnrolled={isEnrolled}
-                                        enrolledClass={enrolledClass}
                                         currentUser={currentUser}
                                         courseId={id!}
                                     />
@@ -100,7 +99,6 @@ export default function CourseCard({
                             <div className="d-flex justify-content-end mt-2">
                                 <EnrollmentButton
                                     isEnrolled={isEnrolled}
-                                    enrolledClass={enrolledClass}
                                     currentUser={currentUser}
                                     courseId={id!}
                                 />
