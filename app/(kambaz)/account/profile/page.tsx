@@ -78,12 +78,13 @@ export default function Profile() {
                         onChange={(e) => setProfile({ ...profile, email: e.target.value })}>
                     </FormControl>
 
-                    <FormSelect id="wd-role" className="form-control mb-2"
+                    <FormSelect id="wd-role" className="form-control mb-2" value={profile.role || "USER"}
                         onChange={(e) => setProfile({ ...profile, role: e.target.value })}>
                         <option value="USER">User</option>
-                        <option value="ADMIN">Admin</option>
-                        <option value="FACULTY">Faculty</option>
                         <option value="STUDENT">Student</option>
+                        <option value="TA">TA</option>
+                        <option value="FACULTY">Faculty</option>
+                        <option value="ADMIN">Admin</option>
                     </FormSelect>
 
                     <Button id="wd-update-btn"

@@ -71,14 +71,6 @@ export default function Dashboard() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currentUser, toggleAllCourses]);
 
-    // const coursesToDisplay = toggleAllCourses ? courses : courses.filter((course) =>
-    //     enrollments.some(
-    //         (enrollment) =>
-    //             enrollment.user === currentUser?._id &&
-    //             enrollment.course === course._id
-    //     )
-    // );
-
     const isFaculty = currentUser?.role === "FACULTY";
 
     return (

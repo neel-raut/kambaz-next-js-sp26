@@ -53,3 +53,18 @@ export const updateModule = async (module: any) => {
     const { data } = await axios.put(`${MODULES_API}/${module._id}`, module);
     return data;
 };
+
+export const findUsersForCourse = async (courseId: string) => {
+    const response = await axios.get(`${COURSES_API}/${courseId}/people`);
+    return response.data;
+};
+
+export const findUserById = async (userId: string) => {
+    const response = await axios.get(`${USERS_API}/${userId}`);
+    return response.data;
+};
+
+export const findUserByLoginId = async (loginId: string) => {
+    const response = await axios.get(`${USERS_API}/login/${loginId}`);
+    return response.data;
+};
