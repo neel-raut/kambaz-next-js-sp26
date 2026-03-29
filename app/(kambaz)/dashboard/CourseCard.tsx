@@ -27,7 +27,7 @@ export default function CourseCard({
     const { currentUser } = useSelector((state: RootState) => state.accountReducer);
     const { enrollments } = useSelector((state: RootState) => state.enrollmentsReducer);
     const enrolledClass = enrollments.find(
-        (enrollment) =>
+        (enrollment: any) =>
             enrollment.user === currentUser?._id &&
             enrollment.course === id
     );

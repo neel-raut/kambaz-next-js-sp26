@@ -6,8 +6,9 @@ import CourseCard from "./CourseCard";
 import { useDispatch, useSelector } from "react-redux";
 import { setCourses } from "../courses/reducer";
 import { RootState } from "../store";
-import { addEnrollment } from "../enrollments/reducer";
+import { addEnrollment, setEnrollments } from "../enrollments/reducer";
 import * as client from "../courses/client";
+import * as enrollClient from "../enrollments/client";
 
 export default function Dashboard() {
     const { courses } = useSelector((state: RootState) => state.coursesReducer);
@@ -59,8 +60,14 @@ export default function Dashboard() {
         }
     };
 
+    const fetchEnrollments = async () => {
+        const enrollments = await enrollClient.findMyEnrollments();
+        dispatch(setEnrollments(enrollments));
+    };
+
     useEffect(() => {
         fetchCourses();
+        fetchEnrollments();
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currentUser, toggleAllCourses]);
 

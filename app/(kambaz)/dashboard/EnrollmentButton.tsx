@@ -30,7 +30,7 @@ export default function EnrollmentButton({
         currentUser?._id,
         courseId,
     );
-    dispatch(setEnrollments(enrollments.filter((e) => !(e.user === currentUser?._id && e.course === courseId))));
+    dispatch(setEnrollments(enrollments.filter((e: any) => !(e.user === currentUser?._id && e.course === courseId))));
   };
 
   const handleEnroll = (event: React.MouseEvent) => {
