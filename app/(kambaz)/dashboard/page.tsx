@@ -19,7 +19,7 @@ export default function Dashboard() {
     const [course, setCourse] = useState<any>({
         _id: "0", name: "New Course", number: "New Number",
         startDate: "2023-09-10", endDate: "2023-12-15",
-        image: "reactjs.jpg", description: "New Description"
+        image: "ReactJS.jpg", description: "New Description"
     });
 
     const onAddNewCourse = async () => {

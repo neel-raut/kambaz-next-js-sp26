@@ -1,0 +1,636 @@
+[
+    {
+        "_id": "RS101",
+        "name": "React JS",
+        "number": "CS1234",
+        "startDate": "2023-01-10",
+        "endDate": "2023-05-15",
+        "department": "Khoury College of Computer Sciences",
+        "credits": 4,
+        "description": "This course provides an in-depth introduction to React JS, a popular JavaScript library for building user interfaces. Students will learn the fundamentals of React, including components, state management, and lifecycle methods. The course covers advanced topics such as hooks, context API, and performance optimization. Through hands-on projects and assignments, students will gain practical experience in developing responsive and dynamic web applications using React JS.",
+        "image": "ReactJS.jpg",
+        "modules": [
+          {
+            "_id": "M101",
+            "name": "Introduction to ReactJS",
+            "description": "Basic principles of ReactJS, including components, state management, and lifecycle methods.",
+            "lessons": [
+              {
+                "_id": "L101",
+                "name": "History of ReactJS",
+                "description": "Overview of the history and evolution of ReactJS."
+              },
+              {
+                "_id": "L102",
+                "name": "ReactJS Fundamentals",
+                "description": "Basic principles of ReactJS."
+              },
+              {
+                "_id": "L103",
+                "name": "ReactJS Applications",
+                "description": "Overview of different types of ReactJS applications."
+              }
+            ]
+          },
+          {
+            "_id": "M102",
+            "name": "ReactJS Components",
+            "description": "Understanding ReactJS components, including functional and class components, and their lifecycle.",
+            "lessons": [
+              {
+                "_id": "L104",
+                "name": "Common ReactJS Components",
+                "description": "Overview of different types of ReactJS components."
+              },
+              {
+                "_id": "L105",
+                "name": "Component Construction",
+                "description": "Understanding how to construct and manage ReactJS components."
+              },
+              {
+                "_id": "L106",
+                "name": "Component Parameterization",
+                "description": "Understanding how to parameterize ReactJS components for reusability."
+              }
+            ]
+          },
+          {
+            "_id": "M103",
+            "name": "ReactJS State Management",
+            "description": "Principles of state management in ReactJS, including the use of hooks and context API.",
+            "lessons": [
+              {
+                "_id": "L107",
+                "name": "Hooks",
+                "description": "Overview of different types of hooks in ReactJS and their usage."
+              },
+              {
+                "_id": "L108",
+                "name": "Context API",
+                "description": "Understanding the Context API for state management in ReactJS applications."
+              },
+              {
+                "_id": "L109",
+                "name": "Performance Optimization",
+                "description": "Understanding performance optimization techniques for state management in ReactJS applications."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "_id": "RS102",
+        "name": "Algorithms",
+        "number": "CS3000",
+        "startDate": "2023-01-10",
+        "endDate": "2023-05-15",
+        "department": "Khoury College of Computer Sciences",
+        "credits": 3,
+        "description": "This course offers a comprehensive study of algorithms, focusing on their design, analysis, and implementation. Students will explore various algorithmic techniques such as divide-and-conquer, dynamic programming, greedy algorithms, and graph algorithms. The course emphasizes the importance of algorithm efficiency and complexity analysis.",
+        "image": "cs3000pic.jpg",
+        "modules": [
+          {
+            "_id": "M201",
+            "name": "Introduction to Algorithms",
+            "description": "Basic principles of algorithms.",
+            "lessons": [
+              {
+                "_id": "L201",
+                "name": "History of Algorithms",
+                "description": "Overview of the history and evolution of algorithms."
+              },
+              {
+                "_id": "L202",
+                "name": "Algorithm Fundamentals",
+                "description": "Basic principles of algorithms."
+              },
+              {
+                "_id": "L203",
+                "name": "Algorithm Applications",
+                "description": "Overview of different types of algorithms and their applications."
+              }
+            ]
+          },
+          {
+            "_id": "M202",
+            "name": "Introduction to Data Structures",
+            "description": "Understanding data structures, including arrays, linked lists, stacks, queues, trees, and graphs.",
+            "lessons": [
+              {
+                "_id": "L204",
+                "name": "Arrays/Lists",
+                "description": "Overview of arrays and lists."
+              },
+              {
+                "_id": "L205",
+                "name": "Stacks/Queues",
+                "description": "Understanding stacks and queues."
+              },
+              {
+                "_id": "L206",
+                "name": "Trees/Graphs",
+                "description": "Understanding trees and graphs."
+              }
+            ]
+          },
+          {
+            "_id": "M203",
+            "name": "Algorithm Formulation",
+            "description": "Principles of algorithm formulation, including problem-solving techniques and algorithm design strategies.",
+            "lessons": [
+              {
+                "_id": "L207",
+                "name": "Algorithm Design Strategies",
+                "description": "Divide-and-conquer, dynamic programming, greedy algorithms."
+              },
+              {
+                "_id": "L208",
+                "name": "Algorithm Analysis",
+                "description": "Understanding Big-O notation and efficiency analysis."
+              },
+              {
+                "_id": "L209",
+                "name": "Algorithm Optimization",
+                "description": "Techniques for optimizing algorithm performance."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "_id": "RS103",
+        "name": "Computer Systems",
+        "number": "CS3650",
+        "startDate": "2023-01-10",
+        "endDate": "2023-05-15",
+        "department": "Khoury College of Computer Sciences",
+        "credits": 4,
+        "description": "This course delves into the architecture and organization of computer systems. Topics include processor design, memory hierarchy, input/output systems, operating system concepts, and system-level programming.",
+        "image": "cs3650pic.jpg",
+        "modules": [
+          {
+            "_id": "M301",
+            "name": "Introduction to Computer Systems",
+            "description": "Basic principles of computer systems.",
+            "lessons": [
+              {
+                "_id": "L301",
+                "name": "History of Computer Systems",
+                "description": "Overview of the history and evolution of computer systems."
+              },
+              {
+                "_id": "L302",
+                "name": "System Fundamentals",
+                "description": "Basic principles of computer systems."
+              },
+              {
+                "_id": "L303",
+                "name": "Operating Systems",
+                "description": "Overview of operating systems and their roles."
+              }
+            ]
+          },
+          {
+            "_id": "M302",
+            "name": "Computer Architecture",
+            "description": "Understanding computer architecture, including processor design, memory hierarchy, and input/output systems.",
+            "lessons": [
+              {
+                "_id": "L304",
+                "name": "Processor Design",
+                "description": "Overview of CPU design and architecture."
+              },
+              {
+                "_id": "L305",
+                "name": "Memory Hierarchy",
+                "description": "Cache, main memory, and storage systems."
+              },
+              {
+                "_id": "L306",
+                "name": "Input/Output Systems",
+                "description": "Peripheral devices and I/O communication."
+              }
+            ]
+          },
+          {
+            "_id": "M303",
+            "name": "Computer Systems Engineering",
+            "description": "System-level design, assembly language programming, and debugging techniques.",
+            "lessons": [
+              {
+                "_id": "L307",
+                "name": "System-Level Design",
+                "description": "Modular system design and integration."
+              },
+              {
+                "_id": "L308",
+                "name": "Assembly Language Programming",
+                "description": "Basics of assembly and low-level programming."
+              },
+              {
+                "_id": "L309",
+                "name": "System-Level Debugging",
+                "description": "Techniques for debugging system-level issues."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "_id": "RS104",
+        "name": "Theory of Computation",
+        "number": "CS3800",
+        "startDate": "2023-01-10",
+        "endDate": "2023-05-15",
+        "department": "Khoury College of Computer Sciences",
+        "credits": 3,
+        "description": "This course explores the fundamental principles of computer science, including formal languages, automata theory, computability, and complexity theory. Topics include Turing machines, context-free grammars, decidability, and the P vs NP problem.",
+        "image": "cs3800pic.jpg",
+        "modules": [
+          {
+            "_id": "M401",
+            "name": "Introduction to Theory of Computation",
+            "description": "Basic principles of theory of computation.",
+            "lessons": [
+              {
+                "_id": "L401",
+                "name": "History of Theory of Computation",
+                "description": "Overview of the history and evolution of theory of computation."
+              },
+              {
+                "_id": "L402",
+                "name": "Theory of Computation Fundamentals",
+                "description": "Formal languages, automata, computability, complexity."
+              },
+              {
+                "_id": "L403",
+                "name": "Theory of Computation Applications",
+                "description": "Turing machines, grammars, and computational limits."
+              }
+            ]
+          },
+          {
+            "_id": "M402",
+            "name": "Computability and Complexity",
+            "description": "Understanding decidability, Turing machines, and complexity classes.",
+            "lessons": [
+              {
+                "_id": "L404",
+                "name": "Turing Machines and Decidability",
+                "description": "Decidable vs undecidable problems."
+              },
+              {
+                "_id": "L405",
+                "name": "P vs NP Problem",
+                "description": "Relationship between P and NP complexity classes."
+              },
+              {
+                "_id": "L406",
+                "name": "Complexity Classes",
+                "description": "P, NP, co-NP, PSPACE."
+              }
+            ]
+          },
+          {
+            "_id": "M403",
+            "name": "Theory of Computation Principles",
+            "description": "Classification of computational problems and limits of computation.",
+            "lessons": [
+              {
+                "_id": "L407",
+                "name": "Classification of Computational Problems",
+                "description": "Decision, optimization, and counting problems."
+              },
+              {
+                "_id": "L408",
+                "name": "Limits of Computability",
+                "description": "Undecidable problems and computational limits."
+              },
+              {
+                "_id": "L409",
+                "name": "Implications of Theory of Computation",
+                "description": "Impact on algorithms and computation theory."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "_id": "RS105",
+        "name": "Cybersecurity",
+        "number": "CY2550",
+        "startDate": "2023-01-10",
+        "endDate": "2023-05-15",
+        "department": "Khoury College of Computer Sciences",
+        "credits": 3,
+        "description": "Cybersecurity focuses on protecting computer systems and networks from cyber threats. Students learn about malware, phishing, denial-of-service attacks, cryptography, network security, ethical hacking, and incident response.",
+        "image": "cy2550pic.jpg",
+        "modules": [
+          {
+            "_id": "M501",
+            "name": "Introduction to Cybersecurity",
+            "description": "Basic principles of cybersecurity.",
+            "lessons": [
+              {
+                "_id": "L501",
+                "name": "History of Cybersecurity",
+                "description": "Evolution of cyber threats and defenses."
+              },
+              {
+                "_id": "L502",
+                "name": "Cybersecurity Fundamentals",
+                "description": "Core principles of cybersecurity."
+              },
+              {
+                "_id": "L503",
+                "name": "Cybersecurity Applications",
+                "description": "Cryptography, network security, and incident response."
+              }
+            ]
+          },
+          {
+            "_id": "M502",
+            "name": "Cyber Threats and Defense",
+            "description": "Understanding cyber attacks and defense strategies.",
+            "lessons": [
+              {
+                "_id": "L504",
+                "name": "Common Cyber Attacks",
+                "description": "Malware, phishing, and denial-of-service attacks."
+              },
+              {
+                "_id": "L505",
+                "name": "Cyber Defense Strategies",
+                "description": "Firewalls, IDS, and security policies."
+              },
+              {
+                "_id": "L506",
+                "name": "Cyber Mitigation Techniques",
+                "description": "Incident response and recovery strategies."
+              }
+            ]
+          },
+          {
+            "_id": "M503",
+            "name": "Cybersecurity Principles",
+            "description": "Cryptography, ethical hacking, and security principles.",
+            "lessons": [
+              {
+                "_id": "L507",
+                "name": "Cryptography and Network Security",
+                "description": "Encryption and secure communication."
+              },
+              {
+                "_id": "L508",
+                "name": "Ethical Hacking and Incident Response",
+                "description": "Penetration testing and vulnerability analysis."
+              },
+              {
+                "_id": "L509",
+                "name": "Implications of Cybersecurity",
+                "description": "Impact on society and digital safety."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "_id": "RS106",
+        "name": "Public Speaking",
+        "number": "COM1112",
+        "startDate": "2023-01-10",
+        "endDate": "2023-05-15",
+        "department": "College of Social Sciences and Humanities",
+        "credits": 3,
+        "description": "Public Speaking focuses on developing effective communication and persuasion skills. Students learn to craft speeches, engage audiences, manage stage presence, and communicate ethically across professional and social contexts.",
+        "image": "comm1112pic.jpg",
+        "modules": [
+          {
+            "_id": "M601",
+            "name": "Introduction to Public Speaking",
+            "description": "Basic principles of public speaking.",
+            "lessons": [
+              {
+                "_id": "L601",
+                "name": "History of Public Speaking",
+                "description": "Evolution of rhetorical traditions and speaking practices."
+              },
+              {
+                "_id": "L602",
+                "name": "Public Speaking Fundamentals",
+                "description": "Core techniques for speech delivery and structure."
+              },
+              {
+                "_id": "L603",
+                "name": "Public Speaking Applications",
+                "description": "Real-world applications in professional contexts."
+              }
+            ]
+          },
+          {
+            "_id": "M602",
+            "name": "Public Speaking Techniques",
+            "description": "Techniques for overcoming fear and improving delivery.",
+            "lessons": [
+              {
+                "_id": "L604",
+                "name": "Overcoming Stage Fright",
+                "description": "Methods to reduce anxiety and build confidence."
+              },
+              {
+                "_id": "L605",
+                "name": "Utilizing Body Language",
+                "description": "Using gestures, posture, and facial expressions effectively."
+              },
+              {
+                "_id": "L606",
+                "name": "Structuring Speeches for Maximum Impact",
+                "description": "Organizing speeches for clarity and persuasion."
+              }
+            ]
+          },
+          {
+            "_id": "M603",
+            "name": "Public Speaking Principles",
+            "description": "Ethics and advanced communication principles.",
+            "lessons": [
+              {
+                "_id": "L607",
+                "name": "Ethical Communication and the Role of Public Speaking",
+                "description": "Importance of honesty and responsibility in communication."
+              },
+              {
+                "_id": "L608",
+                "name": "Implications of Public Speaking",
+                "description": "Impact of speaking on society and professional success."
+              },
+              {
+                "_id": "L609",
+                "name": "Public Speaking in Practice",
+                "description": "Applying speaking skills in real-world scenarios."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "_id": "RS107",
+        "name": "Acting for the Camera",
+        "number": "THTR2345",
+        "startDate": "2023-01-10",
+        "endDate": "2023-05-15",
+        "department": "College of Arts, Media and Design",
+        "credits": 3,
+        "description": "This course introduces acting techniques for film and television. Students learn performance for the camera, character development, emotional authenticity, and collaboration in screen production.",
+        "image": "thtr2345pic.jpg",
+        "author": "654f9ec2ea7ead465908d1e3",
+        "modules": [
+          {
+            "_id": "M701",
+            "name": "Introduction to Acting for the Camera",
+            "description": "Basic principles of acting for the camera.",
+            "lessons": [
+              {
+                "_id": "L701",
+                "name": "History of Acting for the Camera",
+                "description": "Evolution of film and television acting."
+              },
+              {
+                "_id": "L702",
+                "name": "Acting for the Camera Fundamentals",
+                "description": "Core techniques for screen acting."
+              },
+              {
+                "_id": "L703",
+                "name": "Acting for the Camera Applications",
+                "description": "Auditioning and working in production."
+              }
+            ]
+          },
+          {
+            "_id": "M702",
+            "name": "Acting Techniques for the Camera",
+            "description": "Performance techniques for different media formats.",
+            "lessons": [
+              {
+                "_id": "L704",
+                "name": "Acting Techniques for the Camera",
+                "description": "Camera-aware performance methods."
+              },
+              {
+                "_id": "L705",
+                "name": "Acting for the Camera in Practice",
+                "description": "On-set performance and collaboration."
+              },
+              {
+                "_id": "L706",
+                "name": "Acting for the Camera in Different Contexts",
+                "description": "Film, TV, and digital media acting differences."
+              }
+            ]
+          },
+          {
+            "_id": "M703",
+            "name": "Acting Principles for the Camera",
+            "description": "Advanced acting principles and collaboration.",
+            "lessons": [
+              {
+                "_id": "L707",
+                "name": "Emotional Authenticity in Acting for the Camera",
+                "description": "Conveying believable emotions on screen."
+              },
+              {
+                "_id": "L708",
+                "name": "Technical Aspects of On-Screen Acting",
+                "description": "Working with lighting, framing, and camera angles."
+              },
+              {
+                "_id": "L709",
+                "name": "Collaboration in Film Production",
+                "description": "Working with directors and crew."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "_id": "RS108",
+        "name": "Bostonography",
+        "number": "INSH2102",
+        "startDate": "2023-01-10",
+        "endDate": "2023-05-15",
+        "department": "College of Social Sciences and Humanities",
+        "credits": 4,
+        "description": "This course explores the history, culture, and social dynamics of Boston. Students study the city's role in American history, its neighborhoods, and its contributions to arts, education, and innovation through fieldwork and projects.",
+        "image": "insh2102pic.jpg",
+        "author": "654f9ec2ea7ead465908d1e3",
+        "modules": [
+          {
+            "_id": "M801",
+            "name": "Introduction to Bostonography",
+            "description": "Basic principles and history of Bostonography.",
+            "lessons": [
+              {
+                "_id": "L801",
+                "name": "History of Bostonography",
+                "description": "Development of Boston as a subject of study."
+              },
+              {
+                "_id": "L802",
+                "name": "Bostonography Fundamentals",
+                "description": "Core concepts of studying Boston."
+              },
+              {
+                "_id": "L803",
+                "name": "Bostonography Applications",
+                "description": "Fieldwork and experiential learning in Boston."
+              }
+            ]
+          },
+          {
+            "_id": "M802",
+            "name": "Bostonography Concepts",
+            "description": "Understanding Boston's cultural and historical identity.",
+            "lessons": [
+              {
+                "_id": "L804",
+                "name": "Bostonography Concepts",
+                "description": "History, culture, and social dynamics of Boston."
+              },
+              {
+                "_id": "L805",
+                "name": "Bostonography in Practice",
+                "description": "Applying concepts through field experiences."
+              },
+              {
+                "_id": "L806",
+                "name": "Implications of Bostonography",
+                "description": "Understanding Boston’s influence on American history."
+              }
+            ]
+          },
+          {
+            "_id": "M803",
+            "name": "Bostonography Principles",
+            "description": "Advanced study of Boston’s identity and impact.",
+            "lessons": [
+              {
+                "_id": "L807",
+                "name": "Bostonography Principles",
+                "description": "Core principles of analyzing Boston."
+              },
+              {
+                "_id": "L808",
+                "name": "Implications of Bostonography Principles",
+                "description": "Broader societal implications of Boston studies."
+              },
+              {
+                "_id": "L809",
+                "name": "Bostonography in Practice",
+                "description": "Applied learning through research and fieldwork."
+              }
+            ]
+          }
+        ]
+      }
+]

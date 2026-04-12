@@ -9,8 +9,9 @@ import { RootState } from "../../../../store";
 import { useSelector, useDispatch } from "react-redux";
 import * as client from "../../../client";
 import * as enrollClient from "../../../../enrollments/client";
-import * as userClient from "../../../../account/client"
-import { setEnrollments } from "../../../../enrollments/reducer"
+import * as userClient from "../../../../account/client";
+import { setEnrollments } from "../../../../enrollments/reducer";
+import PeopleDetails from "../Details";
 
 export default function PeopleTable() {
     const { cid } = useParams();
@@ -21,6 +22,8 @@ export default function PeopleTable() {
     const [editingCell, setEditingCell] = useState<{ userId: string; field: string } | null>(null);
     const [editingValues, setEditingValues] = useState<Record<string, string>>({});
     const dispatch = useDispatch();
+    const [showDetails, setShowDetails] = useState(false);
+    const [showUserId, setShowUserId] = useState<string | null>(null);
 
     const handleAddClick = async () => {
         if (!loginIdInput) return;
@@ -67,6 +70,7 @@ export default function PeopleTable() {
     };
 
     const isFaculty = currentUser?.role === "FACULTY";
+    const isAdmin = currentUser?.role === "ADMIN";
 
     useEffect(() => {
         fetchPeople();
@@ -143,6 +147,14 @@ export default function PeopleTable() {
 
     return (
         <div id="wd-people-table">
+            {isAdmin && showDetails && (
+                <PeopleDetails
+                    uid={showUserId}
+                    onClose={() => {
+                        setShowDetails(false);
+                        fetchPeople();
+                    }}/>
+            )}
             {isFaculty && 
                 <div className="d-flex mb-3">
                     <input
@@ -172,9 +184,15 @@ export default function PeopleTable() {
                         .map((user: any) => (
                             <tr key={user._id}>
                                 <td className="wd-full-name text-nowrap">
-                                    <FaUserCircle className="me-2 fs-1 text-secondary" />
-                                    <span className="wd-first-name">{user.firstName}</span>{" "}
-                                    <span className="wd-last-name">{user.lastName}</span>
+                                    <span className="text-decoration-none"
+                                        onClick={() => {
+                                            setShowDetails(true);
+                                            setShowUserId(user._id);
+                                        }} >
+                                        <FaUserCircle className="me-2 fs-1 text-secondary" />
+                                        <span className="wd-first-name">{user.firstName}</span>{" "}
+                                        <span className="wd-last-name">{user.lastName}</span>
+                                    </span>
                                 </td>
                                 <td className="wd-login-id">{user.loginId}</td>
                                 {isFaculty ? (
