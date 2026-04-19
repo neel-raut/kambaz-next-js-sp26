@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { Button, Tabs, Tab, Container } from "react-bootstrap";
-import { redirect, useParams } from "next/navigation";
+import { redirect, useParams, useRouter } from "next/navigation";
 import { useState } from "react";
 import { setQuizzes } from "../../reducer";
 import { RootState } from "../../../../../store";
@@ -17,8 +17,9 @@ export default function QuizEditor() {
     const [quiz, setQuiz] = useState<any>(retrievedQuiz || null);
     const [newIds, setNewIds] = useState<string[]>([]);
     const dispatch = useDispatch();
+    const router = useRouter();
 
-    const onCreateQuizForCourse = async (redirectLink: string, publish = false) => {
+    const onCreateQuizForCourse = async (publish = false) => {
         if (!cid) return;
         if (newIds.length > 0) {
             alert("You have unsaved questions. Please save/discard them before saving the quiz.");
@@ -56,16 +57,17 @@ export default function QuizEditor() {
             ...(publish ? { published: true } : {}),
             questions: stripTempIdsFromQuestions(quiz?.questions || []),
         };
+        let savedQuiz;
         if (isNewQuiz) {
-            const createdQuiz = await client.createQuizForCourse(cid as string, quizToSave);
-            dispatch(setQuizzes([...quizzes, createdQuiz]));
+            savedQuiz = await client.createQuizForCourse(cid as string, quizToSave);
+            dispatch(setQuizzes([...quizzes, savedQuiz]));
         } else {
-            const updatedQuiz = await client.updateQuiz(quizToSave);
-            const quizForStore = updatedQuiz || quizToSave;
+            savedQuiz = await client.updateQuiz(quizToSave);
+            const quizForStore = savedQuiz || quizToSave;
             const newQuizzes = quizzes.map((q: any) => q._id === quiz._id ? quizForStore : q);
             dispatch(setQuizzes(newQuizzes));
         }
-        redirect(redirectLink);
+        return savedQuiz;
     };
 
     return (
@@ -94,13 +96,29 @@ export default function QuizEditor() {
             <div className="d-flex gap-1 justify-content-end">
                 <Button variant="secondary" size="lg" id="wd-cancel-btn" onClick={() => redirect(`/courses/${cid}/quizzes`)}> Cancel </Button>
                 <Button variant="danger" size="lg" id="wd-save-btn"
-                    onClick={() => {
-                        onCreateQuizForCourse(`/courses/${cid}/quizzes`)
+                    onClick={async () => {
+                        try {
+                            const saved = await onCreateQuizForCourse();
+                            if (saved && saved._id) {
+                                router.push(`/courses/${cid}/quizzes/${saved._id}/details`);
+                            } else {
+                                router.push(`/courses/${cid}/quizzes`);
+                            }
+                        } catch (error) {
+                            console.error("Error saving quiz:", error);
+                            alert("An error occurred while saving the quiz. Please try again.");
+                        }
                     }}> Save
                 </Button>
                 <Button variant="danger" size="lg" id="wd-save-publish-btn"
-                    onClick={() => {
-                        onCreateQuizForCourse(`/courses/${cid}/quizzes`, true);
+                    onClick={async () => {
+                        try {
+                            await onCreateQuizForCourse(true);
+                            router.push(`/courses/${cid}/quizzes/`);
+                        } catch (error) {
+                            console.error("Error saving and publishing quiz:", error);
+                            alert("An error occurred while saving and publishing the quiz. Please try again.");
+                        }
                     }}> Save and Publish
                 </Button>
             </div>

@@ -99,9 +99,7 @@ export default function QuizDetails() {
             return (
                 <div className="d-flex gap-2 justify-content-center mb-4">
                     <Button variant="secondary" onClick={goToPreview}>Preview</Button>
-                    <Button variant="secondary" onClick={goToEditor}>
-                        <i className="bi bi-pencil me-1" /> Edit
-                    </Button>
+                    <Button variant="secondary" onClick={goToEditor}>Edit</Button>
                 </div>
             );
         }
