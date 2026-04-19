@@ -1,0 +1,413 @@
+[
+    {
+      "_id": "Q-RS101-1",
+      "course": "RS101",
+      "title": "React Basics Quiz",
+      "description": "Covers components, props, and state.",
+      "published": true,
+      "available": "2023-02-01T00:00:00.000Z",
+      "until": "2023-05-01T23:59:59.000Z",
+      "due": "2023-04-15T23:59:59.000Z",
+      "questions": [
+        {
+          "_id": "Q-RS101-1-1",
+          "kind": "multiple_choice",
+          "title": "What is JSX?",
+          "points": 2,
+          "question": "Choose the best description of JSX.",
+          "options": [
+            "A templating language used in React",
+            "A syntax extension that looks like HTML and is used by React",
+            "A CSS-in-JS library",
+            "A backend templating engine"
+          ],
+          "answer": 1
+        },
+        {
+          "_id": "Q-RS101-1-2",
+          "kind": "true_false",
+          "title": "State Mutability",
+          "points": 1,
+          "question": "You should never mutate the state directly in React components.",
+          "answer": true
+        },
+        {
+          "_id": "Q-RS101-1-3",
+          "kind": "fill_in_the_blank",
+          "title": "Component Type",
+          "points": 2,
+          "question": "A React component defined as a function is called a ______ component.",
+          "answers": [
+            "functional",
+            "function",
+            "functional component",
+            "function component"
+          ]
+        }
+      ],
+      "questionCount": 3,
+      "points": 5,
+      "settings": {
+        "quizType": "graded_quiz",
+        "assignmentGroup": "quizzes",
+        "shuffleAnswers": true,
+        "timeLimit": 20,
+        "multipleAttempts": false,
+        "maxAttempts": 1,
+        "showCorrectAnswers": "Immediately",
+        "accessCode": "",
+        "oneQuestionAtATime": false,
+        "webcamRequired": false,
+        "lockQuestionsAfterAnswering": false,
+        "viewLastAttemptOnly": false
+      }
+    },
+    {
+      "_id": "Q-RS102-1",
+      "course": "RS102",
+      "title": "Algorithms Intro Quiz",
+      "description": "Basic algorithm concepts and Big-O.",
+      "published": false,
+      "available": "2023-02-15T00:00:00.000Z",
+      "until": "2023-04-30T23:59:59.000Z",
+      "due": "2023-04-01T23:59:59.000Z",
+      "questions": [
+        {
+          "_id": "Q-RS102-1-1",
+          "kind": "multiple_choice",
+          "title": "Big-O of binary search",
+          "points": 2,
+          "question": "What is the time complexity of binary search?",
+          "options": [
+            "O(n)",
+            "O(log n)",
+            "O(n log n)",
+            "O(1)"
+          ],
+          "answer": 1
+        },
+        {
+          "_id": "Q-RS102-1-2",
+          "kind": "true_false",
+          "title": "Stable Sort",
+          "points": 1,
+          "question": "Merge sort is a stable sorting algorithm.",
+          "answer": true
+        }
+      ],
+      "questionCount": 2,
+      "points": 3,
+      "settings": {
+        "quizType": "graded_quiz",
+        "assignmentGroup": "exams",
+        "shuffleAnswers": false,
+        "timeLimit": 30,
+        "multipleAttempts": true,
+        "maxAttempts": 2,
+        "showCorrectAnswers": "After Due",
+        "accessCode": "",
+        "oneQuestionAtATime": false,
+        "webcamRequired": false,
+        "lockQuestionsAfterAnswering": false,
+        "viewLastAttemptOnly": true
+      }
+    },
+    {
+      "_id": "Q-RS103-1",
+      "course": "RS103",
+      "title": "Computer Systems Quick Check",
+      "description": "Registers, memory, and assembly basics.",
+      "published": true,
+      "available": "2023-03-01T00:00:00.000Z",
+      "until": "2023-05-01T23:59:59.000Z",
+      "due": "2023-04-10T23:59:59.000Z",
+      "questions": [
+        {
+          "_id": "Q-RS103-1-1",
+          "kind": "fill_in_the_blank",
+          "title": "Register Size",
+          "points": 2,
+          "question": "The x86-64 architecture has ______-bit general purpose registers.",
+          "answers": [
+            "64",
+            "sixty-four"
+          ]
+        },
+        {
+          "_id": "Q-RS103-1-2",
+          "kind": "multiple_choice",
+          "title": "Cache purpose",
+          "points": 2,
+          "question": "What is the main purpose of CPU caches?",
+          "options": [
+            "Increase hard drive speed",
+            "Store long-term data",
+            "Reduce average memory access time",
+            "Manage network packets"
+          ],
+          "answer": 2
+        }
+      ],
+      "questionCount": 2,
+      "points": 4,
+      "settings": {
+        "quizType": "practice_quiz",
+        "assignmentGroup": "quizzes",
+        "shuffleAnswers": true,
+        "timeLimit": 10,
+        "multipleAttempts": true,
+        "maxAttempts": 5,
+        "showCorrectAnswers": "Immediately",
+        "accessCode": "",
+        "oneQuestionAtATime": true,
+        "webcamRequired": false,
+        "lockQuestionsAfterAnswering": false,
+        "viewLastAttemptOnly": false
+      }
+    },
+    {
+      "_id": "Q-RS104-1",
+      "course": "RS104",
+      "title": "Theory of Computation Basics",
+      "description": "Regular languages and automata.",
+      "published": false,
+      "available": "2023-03-05T00:00:00.000Z",
+      "until": "2023-04-20T23:59:59.000Z",
+      "due": "2023-04-15T23:59:59.000Z",
+      "questions": [
+        {
+          "_id": "Q-RS104-1-1",
+          "kind": "true_false",
+          "title": "Turing completeness",
+          "points": 1,
+          "question": "Every programming language is Turing complete.",
+          "answer": false
+        },
+        {
+          "_id": "Q-RS104-1-2",
+          "kind": "multiple_choice",
+          "title": "Regular languages closure",
+          "points": 2,
+          "question": "Which operation is NOT closed for regular languages?",
+          "options": [
+            "Union",
+            "Intersection",
+            "Complement",
+            "None of the above"
+          ],
+          "answer": 3
+        }
+      ],
+      "questionCount": 2,
+      "points": 3,
+      "settings": {
+        "quizType": "graded_quiz",
+        "assignmentGroup": "quizzes",
+        "shuffleAnswers": false,
+        "timeLimit": 25,
+        "multipleAttempts": false,
+        "maxAttempts": 1,
+        "showCorrectAnswers": "After Due",
+        "accessCode": "",
+        "oneQuestionAtATime": false,
+        "webcamRequired": false,
+        "lockQuestionsAfterAnswering": false,
+        "viewLastAttemptOnly": true
+      }
+    },
+    {
+      "_id": "Q-RS105-1",
+      "course": "RS105",
+      "title": "Cybersecurity Fundamentals",
+      "description": "Intro to threats and defenses.",
+      "published": true,
+      "available": "2023-02-20T00:00:00.000Z",
+      "until": "2023-05-01T23:59:59.000Z",
+      "due": "2023-04-01T23:59:59.000Z",
+      "questions": [
+        {
+          "_id": "Q-RS105-1-1",
+          "kind": "multiple_choice",
+          "title": "Phishing",
+          "points": 2,
+          "question": "Phishing attacks are primarily aimed at:",
+          "options": [
+            "Stealing credentials",
+            "Disrupting hardware",
+            "Physical theft",
+            "Improving performance"
+          ],
+          "answer": 0
+        },
+        {
+          "_id": "Q-RS105-1-2",
+          "kind": "fill_in_the_blank",
+          "title": "Encryption type",
+          "points": 2,
+          "question": "RSA is an example of ______ encryption.",
+          "answers": [
+            "asymmetric",
+            "public key",
+            "public-key"
+          ]
+        }
+      ],
+      "questionCount": 2,
+      "points": 4,
+      "settings": {
+        "quizType": "graded_quiz",
+        "assignmentGroup": "assignments",
+        "shuffleAnswers": true,
+        "timeLimit": 15,
+        "multipleAttempts": false,
+        "maxAttempts": 1,
+        "showCorrectAnswers": "Immediately",
+        "accessCode": "",
+        "oneQuestionAtATime": false,
+        "webcamRequired": false,
+        "lockQuestionsAfterAnswering": false,
+        "viewLastAttemptOnly": false
+      }
+    },
+    {
+      "_id": "Q-RS106-1",
+      "course": "RS106",
+      "title": "Public Speaking Quick Quiz",
+      "description": "Verbal and non-verbal communication basics.",
+      "published": false,
+      "available": "2023-03-01T00:00:00.000Z",
+      "until": "2023-04-30T23:59:59.000Z",
+      "due": "2023-04-10T23:59:59.000Z",
+      "questions": [
+        {
+          "_id": "Q-RS106-1-1",
+          "kind": "true_false",
+          "title": "Eye contact",
+          "points": 1,
+          "question": "Maintaining eye contact can improve audience engagement.",
+          "answer": true
+        }
+      ],
+      "questionCount": 1,
+      "points": 1,
+      "settings": {
+        "quizType": "practice_quiz",
+        "assignmentGroup": "quizzes",
+        "shuffleAnswers": false,
+        "timeLimit": 5,
+        "multipleAttempts": true,
+        "maxAttempts": 10,
+        "showCorrectAnswers": "Immediately",
+        "accessCode": "",
+        "oneQuestionAtATime": true,
+        "webcamRequired": false,
+        "lockQuestionsAfterAnswering": false,
+        "viewLastAttemptOnly": false
+      }
+    },
+    {
+      "_id": "Q-RS107-1",
+      "course": "RS107",
+      "title": "Acting for the Camera Basics",
+      "description": "Performance and camera awareness.",
+      "published": true,
+      "available": "2023-02-25T00:00:00.000Z",
+      "until": "2023-05-01T23:59:59.000Z",
+      "due": "2023-04-20T23:59:59.000Z",
+      "questions": [
+        {
+          "_id": "Q-RS107-1-1",
+          "kind": "multiple_choice",
+          "title": "Subtext",
+          "points": 2,
+          "question": "Subtext in acting refers to:",
+          "options": [
+            "The literal words delivered",
+            "The underlying meaning or intention behind the words",
+            "Stage directions",
+            "The script's title"
+          ],
+          "answer": 1
+        },
+        {
+          "_id": "Q-RS107-1-2",
+          "kind": "true_false",
+          "title": "Blocking",
+          "points": 1,
+          "question": "Blocking refers to the planned movements and positions of actors on stage or set.",
+          "answer": true
+        }
+      ],
+      "questionCount": 2,
+      "points": 3,
+      "settings": {
+        "quizType": "graded_quiz",
+        "assignmentGroup": "quizzes",
+        "shuffleAnswers": true,
+        "timeLimit": 15,
+        "multipleAttempts": false,
+        "maxAttempts": 1,
+        "showCorrectAnswers": "Immediately",
+        "accessCode": "",
+        "oneQuestionAtATime": false,
+        "webcamRequired": false,
+        "lockQuestionsAfterAnswering": false,
+        "viewLastAttemptOnly": false
+      }
+    },
+    {
+      "_id": "Q-RS108-1",
+      "course": "RS108",
+      "title": "Bostonography Intro Quiz",
+      "description": "Local history and landmarks.",
+      "published": false,
+      "available": "2023-03-10T00:00:00.000Z",
+      "until": "2023-05-01T23:59:59.000Z",
+      "due": "2023-04-25T23:59:59.000Z",
+      "questions": [
+        {
+          "_id": "Q-RS108-1-1",
+          "kind": "fill_in_the_blank",
+          "title": "Freedom Trail",
+          "points": 2,
+          "question": "The Freedom Trail is approximately ______ miles long.",
+          "answers": [
+            "2.5",
+            "2.5 miles",
+            "2.5mi",
+            "2.5 miles long"
+          ]
+        },
+        {
+          "_id": "Q-RS108-1-2",
+          "kind": "multiple_choice",
+          "title": "Fenway Park team",
+          "points": 1,
+          "question": "Which Major League Baseball team plays at Fenway Park?",
+          "options": [
+            "New York Yankees",
+            "Boston Red Sox",
+            "Chicago Cubs",
+            "Los Angeles Dodgers"
+          ],
+          "answer": 1
+        }
+      ],
+      "questionCount": 2,
+      "points": 3,
+      "settings": {
+        "quizType": "practice_quiz",
+        "assignmentGroup": "quizzes",
+        "shuffleAnswers": true,
+        "timeLimit": 10,
+        "multipleAttempts": true,
+        "maxAttempts": 3,
+        "showCorrectAnswers": "Immediately",
+        "accessCode": "",
+        "oneQuestionAtATime": false,
+        "webcamRequired": false,
+        "lockQuestionsAfterAnswering": false,
+        "viewLastAttemptOnly": false
+      }
+    }
+  ]

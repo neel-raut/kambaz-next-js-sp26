@@ -9,13 +9,20 @@ export default function CourseNavigation() {
     return (
         <div id="wd-courses-navigation" className="wd list-group fs-5 rounded-0">
             {links.map((link) => {
-                const linkHref = link === "People" ? `/courses/${cid}/${link.toLowerCase()}/table`:`/courses/${cid}/${link.toLowerCase()}`;
+                const basePath = link === "Home"
+                    ? `/courses/${cid}/home`
+                    : `/courses/${cid}/${link.toLowerCase()}`;
+                const linkHref = link === "People" ? `${basePath}/table` : basePath;
+
+                const isActive = link === "Home"
+                    ? pathname === `/courses/${cid}` || pathname?.startsWith(`/courses/${cid}/home`)
+                    : pathname?.startsWith(basePath);
 
                 return (<Link 
                         key={link} 
                         href={linkHref} 
                         id={`wd-course-${link.toLowerCase()}-link`} 
-                        className={`list-group-item ${(pathname === linkHref) ? "active" : "text-danger"} border-0`}>
+                        className={`list-group-item ${isActive ? "active" : "text-danger"} border-0`}>
                             {link}
                         </Link>
                 );

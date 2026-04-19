@@ -42,4 +42,16 @@ body * {
 .wd-assignment {
     border-left: 3px solid green !important;
 }
+
+#wd-quiz-menu::after {
+    display: none !important;
+}
+
+#wd-quiz-options::after {
+    display: none !important;
+}
+
+.quiz-editor-tabs .nav-link {
+    color: var(--bs-danger);
+}
   
