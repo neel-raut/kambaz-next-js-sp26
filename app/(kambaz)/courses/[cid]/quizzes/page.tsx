@@ -12,7 +12,18 @@ import { setQuizzes } from "./reducer";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../../store";
 import * as client from "./client";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+
+function compareByDate(field: "due" | "available") {
+  return (a: any, b: any) => {
+    const aDate = a?.[field] ? new Date(a[field]) : null;
+    const bDate = b?.[field] ? new Date(b[field]) : null;
+    if (!aDate && !bDate) return 0;
+    if (!aDate) return 1;
+    if (!bDate) return -1;
+    return aDate.getTime() - bDate.getTime();
+  };
+}
 
 function formatDate(dateString: string, time: string) {
   // Take in date as "YYYY-MM-DD" format, time as "HH:MM" format
@@ -34,15 +45,29 @@ export default function Quizzes() {
     const { cid } = useParams();
     const { currentUser } = useSelector((state: RootState) => state.accountReducer);
     const { quizzes } = useSelector((state: RootState) => state.quizzesReducer);
+    const sortBy = useSelector((state: RootState) => state.quizzesReducer.sortBy ?? "default");
     const [attemptsMap, setAttemptsMap] = useState<{ [quizId: string]: any }>({});
     const dispatch = useDispatch();
+
+    const sortedQuizzes = useMemo(() => {
+        if (!quizzes) return [];
+        const sorted = [...quizzes];
+        if (sortBy === "name") {
+            sorted.sort((a: any, b: any) => 
+              (a?.title || "").localeCompare(b?.title || "", undefined, { sensitivity: "base" }));
+        } else if (sortBy === "due") {
+            sorted.sort(compareByDate("due"));
+        } else if (sortBy === "available") {
+            sorted.sort(compareByDate("available"));
+        }
+        return sorted;
+    }, [quizzes, sortBy]);
 
     const fetchQuizzes = async () => {
       let quizzes = await client.findQuizzesForCourse(cid as string);
       if (currentUser.role === "STUDENT") {
         quizzes = quizzes.filter((q: any) => q.published);
       }
-      console.log(quizzes);
       dispatch(setQuizzes(quizzes));
     };
 
@@ -102,7 +127,7 @@ export default function Quizzes() {
               <BsGripVertical className="me-2 fs-3" /> QUIZZES <QuizListControlButtons />
             </div>
             <ListGroup className="wd-quizzes rounded-0">
-              {quizzes
+              {sortedQuizzes
                 .map((quiz: any) => (
                   <ListGroupItem className="wd-quiz d-flex align-items-center" key={quiz._id}>
                     <BsGripVertical className="me-2 fs-3 flex-shrink-0 me-1" />

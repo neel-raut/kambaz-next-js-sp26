@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 
 const initialState = {
   quizzes: [],
+  sortBy: "default" as "default" | "name" | "due" | "available",
 };
 
 const quizzesSlice = createSlice({
@@ -12,6 +13,9 @@ const quizzesSlice = createSlice({
   reducers: {
     setQuizzes: (state, action) => {
       state.quizzes = action.payload;
+    },
+    setSortBy: (state, action) => {
+      state.sortBy = action.payload;
     },
     addQuiz: (state, { payload: quiz }) => {
       const newQuiz: any = {
@@ -31,6 +35,6 @@ const quizzesSlice = createSlice({
     },
   },
 });
-export const { addQuiz, deleteQuiz, updateQuiz, setQuizzes } =
+export const { addQuiz, deleteQuiz, updateQuiz, setQuizzes, setSortBy } =
   quizzesSlice.actions;
 export default quizzesSlice.reducer;

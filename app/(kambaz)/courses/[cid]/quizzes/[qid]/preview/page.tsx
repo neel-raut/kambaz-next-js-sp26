@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import { Button, Container, FormCheck, FormControl } from "react-bootstrap";
+import { Button, Col, Container, FormCheck, FormControl, Nav, Row } from "react-bootstrap";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -19,11 +19,6 @@ const formatDateTime = (d: Date | string) => {
     });
 };
 
-/**
- * Renders a single question card: gray header (title + points) above a white
- * body (question text + answer input). Used both in this preview page and the
- * attempt-results page — but here without any highlighting, inputs enabled.
- */
 const QuestionCard = ({
     question,
     index,
@@ -102,17 +97,12 @@ export default function QuizPreview() {
     const quiz = quizzes.find((q: any) => q._id === qid && q.course === cid) as any;
     const router = useRouter();
 
-    // startedAt is set once on mount (via lazy initializer) and never again, so
-    // even if React re-renders or strict mode double-invokes effects, the value
-    // stays fixed from first paint.
     const [startedAt] = useState<string>(() => new Date().toISOString());
     const [answers, setAnswers] = useState<Record<string, any>>({});
     const [currentIdx, setCurrentIdx] = useState<number>(0);
     const [lastSaved, setLastSaved] = useState<Date>(new Date());
     const [submitting, setSubmitting] = useState<boolean>(false);
 
-    // Guard: if quiz is missing, bail out. (E.g. page visited directly without
-    // the quizzes slice being populated — send them back to the list.)
     useEffect(() => {
         if (!quiz) router.push(`/courses/${cid}/quizzes`);
     }, [quiz, cid, router]);
@@ -153,9 +143,6 @@ export default function QuizPreview() {
                 answerPayload,
                 startedAt
             );
-            // Faculty lands straight on the specific-attempt page; student too,
-            // but the attempts-history-list page wants them first. Per spec:
-            // student goes to attempts/, faculty goes to attempts/[aid].
             if (currentUser?.role === "FACULTY") {
                 router.push(`/courses/${cid}/quizzes/${qid}/attempts/${attempt._id}`);
             } else {
@@ -172,25 +159,65 @@ export default function QuizPreview() {
 
     return (
         <Container className="mt-3">
-            <h2>{quiz.title}</h2>
+            <Row>
+                <Col xs={oneAtATime ? 9 : 12}>
+                    <h2>{quiz.title}</h2>
 
-            {isFaculty && (
-                <div className="d-flex align-items-center gap-2 px-3 py-2 mb-2 rounded"
-                     style={{ backgroundColor: "#f8d7da" }}
-                >
-                    <BsExclamationCircleFill className="text-danger" />
-                    <span className="text-danger">
-                        This is a preview of the published version of the quiz.
-                    </span>
-                </div>
-            )}
+                    {isFaculty && (
+                        <div className="d-flex align-items-center gap-2 px-3 py-2 mb-2 rounded"
+                            style={{ backgroundColor: "#f8d7da" }}
+                        >
+                            <BsExclamationCircleFill className="text-danger" />
+                            <span className="text-danger">
+                                This is a preview of the published version of the quiz.
+                            </span>
+                        </div>
+                    )}
 
-            <div className="text-muted mb-2">
-                Started: {formatDateTime(startedAt)}
-            </div>
+                    {startedAt && (
+                        <div className="text-muted mb-2">
+                            Started: {formatDateTime(startedAt)}
+                        </div>
+                    )}
 
-            <h4 className="mt-4">Quiz Instructions</h4>
-            <p>{quiz.description}</p>
+                    <h4 className="mt-4">Quiz Instructions</h4>
+                    <p>{quiz.description}</p>
+                </Col>
+
+                {oneAtATime && (
+                    <Col xs={3}>
+                        <h5>Questions</h5>
+                        <div style={{ maxHeight: "240px", overflowY: "auto", overflowX: "hidden" }}>
+                            <Nav className="flex-column">
+                                {questions.map((q: any, idx: number) => {
+                                    const isActive = idx === currentIdx;
+                                    const raw = answers[q._id];
+                                    const hasAnswer = raw !== undefined && raw !== null && raw !== "";
+                                    const textClass = isActive
+                                        ? "text-dark fw-bold"
+                                        : hasAnswer 
+                                            ? "text-muted"
+                                            : "text-danger";
+                                    return (
+                                        <Nav.Link
+                                            key={q._id}
+                                            onClick={() => {
+                                                setCurrentIdx(idx);
+                                                setLastSaved(new Date());
+                                            }}
+                                            className={textClass}
+                                        style={{ cursor: "pointer", backgroundColor: "transparent" }}
+                                        >
+                                            Question {idx + 1}
+                                        </Nav.Link>
+                                    );
+                                })}
+                            </Nav>
+                        </div>
+                    </Col>
+                )}
+            </Row>
+
             <hr />
 
             {/* Body: either one question at a time or all at once */}
@@ -236,7 +263,6 @@ export default function QuizPreview() {
                 ))
             )}
 
-            {/* Always-visible "Quiz saved at X | Submit Quiz" footer box */}
             <div className="border rounded p-3 bg-white d-flex justify-content-between align-items-center">
                 <span className="text-muted">
                     Quiz saved at {formatTime(lastSaved)}
