@@ -101,8 +101,6 @@ export default function QuizEditor() {
                             const saved = await onCreateQuizForCourse();
                             if (saved && saved._id) {
                                 router.push(`/courses/${cid}/quizzes/${saved._id}/details`);
-                            } else {
-                                router.push(`/courses/${cid}/quizzes`);
                             }
                         } catch (error) {
                             console.error("Error saving quiz:", error);
@@ -113,8 +111,10 @@ export default function QuizEditor() {
                 <Button variant="danger" size="lg" id="wd-save-publish-btn"
                     onClick={async () => {
                         try {
-                            await onCreateQuizForCourse(true);
-                            router.push(`/courses/${cid}/quizzes/`);
+                            const saved = await onCreateQuizForCourse(true);
+                            if (saved && saved._id) {
+                                router.push(`/courses/${cid}/quizzes`);
+                            }
                         } catch (error) {
                             console.error("Error saving and publishing quiz:", error);
                             alert("An error occurred while saving and publishing the quiz. Please try again.");
